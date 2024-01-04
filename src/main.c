@@ -2,13 +2,7 @@
 
 int	ft_stop(t_data *data)
 {
-	destroy_all_images(data);
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
-	free(data->mlx);
-	free_all(data);
-	exit(0);
-	return (0);
+	return (destroy_all_images(data), mlx_destroy_window(data->mlx, data->win), mlx_destroy_display(data->mlx), free(data->mlx), free_all(data), exit(1), 0);
 }
 
 int	ft_key_check(int key, t_data *data)
@@ -75,6 +69,8 @@ void	ft_display(t_data *data)
 {
 	data->x = 0;
 	data->y = 0;
+	data->b_x = 0;
+	data->b_y = 0;
 	data->gen = 0;
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, (data->map_width * 16), ((data->map_height) * 16), "GAME OF LIFE");

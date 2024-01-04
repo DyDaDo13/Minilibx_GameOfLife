@@ -51,6 +51,8 @@ typedef struct s_data
 	char			**map_cpy;
 	void			*mlx;
 	void			*win;
+	int				i;
+	int				j;
 	int				i_x;
 	int				i_y;
 	int				m_x;
