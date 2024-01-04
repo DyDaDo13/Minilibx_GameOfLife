@@ -48,10 +48,15 @@ typedef struct s_point
 typedef struct s_data
 {
 	char			**map;
+	char			**map_cpy;
 	void			*mlx;
 	void			*win;
+	int				i_x;
+	int				i_y;
 	int				m_x;
 	int				m_y;
+	int				b_x;
+	int				b_y;
 	int				x;
 	int				y;
 	int				gen;
@@ -73,5 +78,7 @@ void	free_all(t_data *data);
 void	destroy_all_images(t_data *data);
 void	draw_images(t_data *data, int i, int j);
 void	init_images(t_data *data);
+void	get_m_x_y(t_data *data, int x, int y);
+int		algorithm(t_data *data);
 
 #endif

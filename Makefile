@@ -9,7 +9,8 @@ free_all.c get_next_line.c \
 get_next_line_utils.c \
 init_images.c init_map.c \
 lst_functions.c main.c \
-draw_images.c \
+draw_images.c get_m_x_y.c \
+algorithm.c \
 #───────────────────────────────╱
 
 #┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
