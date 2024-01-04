@@ -73,7 +73,7 @@ void	ft_display(t_data *data)
 	data->b_y = 0;
 	data->gen = 0;
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, (data->map_width * 16), ((data->map_height) * 16), "GAME OF LIFE");
+	data->win = mlx_new_window(data->mlx, (data->map_width * 16), (data->map_height * 16), "GAME OF LIFE");
 	init_images(data);
 	draw_map(data);
 	mlx_hook(data->win, 3, (1L << 0) + (1L << 1), ft_key_check, data);

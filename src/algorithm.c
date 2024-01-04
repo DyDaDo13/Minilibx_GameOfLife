@@ -10,18 +10,24 @@ int	is_dead(t_data *data)
 		count++;
 	if (data->map_cpy[y][x + 1] && data->map_cpy[y][x + 1] == '1')
 		count++;
-	if (data->map_cpy[y - 1][x] && data->map_cpy[y - 1][x] == '1')
-		count++;
-	if (data->map_cpy[y + 1][x] && data->map_cpy[y + 1][x] == '1')
-		count++;
-	if (data->map_cpy[y - 1][x - 1] && data->map_cpy[y - 1][x - 1] == '1')
-		count++;
-	if (data->map_cpy[y + 1][x + 1] && data->map_cpy[y + 1][x + 1] == '1')
-		count++;
-	if (data->map_cpy[y - 1][x + 1] && data->map_cpy[y - 1][x + 1] == '1')
-		count++;
-	if (data->map_cpy[y + 1][x - 1] && data->map_cpy[y + 1][x - 1] == '1')
-		count++;
+	if (y - 1 >= 0)
+		if (data->map_cpy[y - 1][x] && data->map_cpy[y - 1][x] == '1') //==============================================================
+			count++;
+	if (y + 1 <= (data->map_height - 1))
+		if (data->map_cpy[y + 1][x] && data->map_cpy[y + 1][x] == '1') //==============================================================
+			count++;
+	if (y - 1 >= 0)
+		if (data->map_cpy[y - 1][x - 1] && data->map_cpy[y - 1][x - 1] == '1')
+			count++;
+	if (y + 1 <= (data->map_height - 1))
+		if (data->map_cpy[y + 1][x + 1] && data->map_cpy[y + 1][x + 1] == '1')
+			count++;
+	if (y - 1 >= 0)
+		if (data->map_cpy[y - 1][x + 1] && data->map_cpy[y - 1][x + 1] == '1')
+			count++;
+	if (y + 1 <= (data->map_height - 1))
+		if (data->map_cpy[y + 1][x - 1] && data->map_cpy[y + 1][x - 1] == '1')
+			count++;
 	if (count > 3 || count < 2)
 		return (1);
 	return (0);
