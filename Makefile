@@ -49,7 +49,7 @@ MLXS	= $(addprefix $(MLX_DIR), $(MLX))
 
 CC			= gcc
 RM			= rm -rf
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDE		= -I.
 MLX_FLAGS	= -lX11 -lXext
 
