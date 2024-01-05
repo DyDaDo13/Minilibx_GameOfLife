@@ -6,12 +6,11 @@
 /*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 19:40:14 by dydado13          #+#    #+#             */
-/*   Updated: 2024/01/04 08:12:31 by dylmarti         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:33:48 by dylmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/life_game.h"
-
 
 t_map	*init_map_struct(int fd)
 {

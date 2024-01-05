@@ -6,7 +6,7 @@
 /*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:35:32 by dydado13          #+#    #+#             */
-/*   Updated: 2024/01/05 11:03:30 by dylmarti         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:53:28 by dylmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	free_all(t_data *data)
 {
 	if (data->map)
 		free_map(data);
+	free(data);
 }
