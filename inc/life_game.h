@@ -68,19 +68,38 @@ typedef struct s_data
 	t_sprites		sprites;
 }t_data;
 
-char	**init_map(int fd, t_data *data);
+///////// GAME ////////////
+int		algorithm(t_data *data);
+int		reset(t_data *data);
+
+
+///////////// LIST FUNCTIONS /////////
 int		ft_lstsize(t_map *lst);
 t_map	*ft_lstnew(void *content);
 t_map	*ft_lstlast(t_map *lst);
 void	ft_lstadd_back(t_map **lst, t_map *new);
-void	map_size_x_y(t_data *data);
-void	free_map(t_data *data);
-void	free_list(t_map **map);
-void	free_all(t_data *data);
-void	destroy_all_images(t_data *data);
-void	draw_images(t_data *data, int i, int j);
-void	init_images(t_data *data);
+
+/////////// DATA ///////////////
 void	get_m_x_y(t_data *data, int x, int y);
-int		algorithm(t_data *data);
+void	map_size_x_y(t_data *data);
+
+/////////// FREE AND DESTROY ////////////
+void	free_map(t_data *data);
+void	free_all(t_data *data);
+void	free_list(t_map **map);
+void	destroy_all_images(t_data *data);
+int		ft_stop(t_data *data);
+
+///////////// INIT AND DRAW /////////////
+void	draw_map(t_data *data);
+char	**init_map(int fd, t_data *data);
+void	init_images(t_data *data);
+void	draw_images(t_data *data, int i, int j);
+
+////////////// HOOKS //////////////
+int		mouse_hook(int mc, int x, int y, t_data *data);
+int		ft_key_check(int key, t_data *data);
+
+///////////////// OTHERS ////////////////
 
 #endif

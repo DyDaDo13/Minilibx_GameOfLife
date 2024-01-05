@@ -1,5 +1,5 @@
 #────────────────────────────╮
-NAME	= LifeGame
+NAME	= Game_of_life
 #────────────────────────────╯
 
 #---------	FUNCTIONS -----------
@@ -8,9 +8,9 @@ FUNC	= destroy_all_images.c \
 free_all.c get_next_line.c \
 get_next_line_utils.c \
 init_images.c init_map.c \
-lst_functions.c main.c \
-draw_images.c get_m_x_y.c \
-algorithm.c \
+lst_functions.c Game_of_life.c \
+draw.c get_m_x_y.c \
+algorithm.c hooks.c reset.c\
 #───────────────────────────────╱
 
 #┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
