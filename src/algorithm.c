@@ -186,7 +186,7 @@ int	algorithm(t_data *data)
 	free_map(data);
 	data->map = map_cpy(cpy);
 	free_map2(cpy);
-	draw_map(map, data);
+	draw_map(data->map, data);
 	printf("Generation %i\n", data->gen++);
 	return (0);
 }
