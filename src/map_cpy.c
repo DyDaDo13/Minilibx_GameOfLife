@@ -12,13 +12,13 @@ char	**map_cpy(char **map)
 		while(map[y][x])
 			x++;
 	}
-	cpy = malloc(sizeof(char) * (y + 1));
-	cpy[y + 1] = '\0';
+	cpy = malloc(sizeof(char*) * (y + 1));
+	cpy[y] = NULL;
 	y = 0;
 	while (map[y])
 	{
 		cpy[y] = malloc(sizeof(char) * (x + 1));
-		cpy[y][x + 1] = '\0';
+		cpy[y][x] = '\0';
 		y++;
 	}
 	y = 0;

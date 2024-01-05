@@ -62,7 +62,7 @@ int	find_block(t_data *data)
 
 int	algorithm(t_data *data)
 {
-	//char		**cpy;
+	char		**cpy;
 	//int		i = 0;
 	//int		x = 0;
 	//int		y = 0;
@@ -74,22 +74,22 @@ int	algorithm(t_data *data)
 
 	//printf("test\n");
 	//cpy = data->map_cpy;
-	//cpy = map_cpy(data->map_cpy);
+	cpy = map_cpy(data->map_cpy);
 	//print_map(cpy);
-	
+
 	while (find_block(data) == 1)
 	{
 		printf("b_y = %i\nb_x = %i\n", data->b_y, data->b_x);
 		if (is_dead(data) == 1)
 		{
-			//data->map_cpy[data->b_y][data->b_x] = '0';
+			cpy[data->b_y][data->b_x] = '0';
 			printf("mort\n");
 		}
 		else
 			printf("vie\n");
 		usleep(200);
 	}
-	print_map(data->map);
+	print_map(cpy);
 	printf("\n");
 	print_map(data->map_cpy);
 	return (0);

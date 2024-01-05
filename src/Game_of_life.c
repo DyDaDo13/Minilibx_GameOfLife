@@ -25,15 +25,12 @@ void	ft_display(t_data *data)
 int	main(void)
 {
 	t_data	*data;
-	char	**cpy;
 	int		fd;
 	
 	data = malloc(sizeof(t_data));
 	fd = open("map/map.txt", O_RDONLY);
 	data->map = init_map(fd, data);
 	data->map_cpy = data->map;
-	cpy = map_cpy(data->map_cpy);
-	print_map(cpy);
-	//ft_display(data);
+	ft_display(data);
 	return (0);
 }
