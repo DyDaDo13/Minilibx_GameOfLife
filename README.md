@@ -1,5 +1,7 @@
 The representation of the "GAME OF LIFE"
 
+https://github.com/DyDaDo13/game_of_life/assets/139651579/cf38560f-4114-4400-b3f8-09d3137cd6d3
+
 the concept is to draw dots and press space to watch them move
 
 the rules are simple
