@@ -7,18 +7,18 @@ int		mouse_hook(int mc, int x, int y, t_data *data)
 	if (mc == 1)
 	{
 		get_m_x_y(data, x, y);
-		if (data->map_cpy[data->m_y][data->m_x] == '0')
+		if (data->map[data->m_y][data->m_x] == '0')
 		{
-			data->map_cpy[data->m_y][data->m_x] = '1';
+			data->map[data->m_y][data->m_x] = '1';
 			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, data->i_x, data->i_y);
 		}
-		else if (data->map_cpy[data->m_y][data->m_x] == '1')
+		else if (data->map[data->m_y][data->m_x] == '1')
 		{
-			data->map_cpy[data->m_y][data->m_x] = '0';
+			data->map[data->m_y][data->m_x] = '0';
 			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, data->i_x, data->i_y);
 		}
-		printf("map = %c\n", data->map_cpy[data->m_y][data->m_x]);
-		printf("x = %i y = %i\n\033[31mm_x = %i m_y = %i\033[34m\ni_x = %i i_y = %i\033[0m\n", x, y, data->m_x, data->m_y, data->i_x, data->i_y);
+		//printf("map = %c\n", data->map[data->m_y][data->m_x]);
+		//printf("x = %i y = %i\n\033[31mm_x = %i m_y = %i\033[34m\ni_x = %i i_y = %i\033[0m\n", x, y, data->m_x, data->m_y, data->i_x, data->i_y);
 	}
 	return (0);
 }

@@ -48,8 +48,6 @@ typedef struct s_point
 typedef struct s_data
 {
 	char			**map;
-	char			**map_cpy;
-	char			**map_cpy2;
 	void			*mlx;
 	void			*win;
 	int				i;

@@ -30,7 +30,6 @@ int	main(void)
 	data = malloc(sizeof(t_data));
 	fd = open("map/map.txt", O_RDONLY);
 	data->map = init_map(fd, data);
-	data->map_cpy = data->map;
 	ft_display(data);
 	return (0);
 }
