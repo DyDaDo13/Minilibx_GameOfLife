@@ -24,12 +24,12 @@ void	ft_display(t_data *data)
 
 int	main(void)
 {
-	t_data	*data;
-	int		fd;
+	t_data	*data;								// initialize the structure "data"
+	int		fd;									// initialize the file descriptor "fd"
 	
-	data = malloc(sizeof(t_data));
-	fd = open("map/map.txt", O_RDONLY);
-	data->map = init_map(fd, data);
-	ft_display(data);
+	data = malloc(sizeof(t_data));				// malloc the data
+	fd = open("map/map.txt", O_RDONLY);			// open the fd with "0_RDONLY" flag
+	data->map = init_map(fd, data);				// put all the map (fd) inside a "char **"
+	ft_display(data);							// start the display of the game
 	return (0);
 }
