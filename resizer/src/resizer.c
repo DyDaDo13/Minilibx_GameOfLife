@@ -1,5 +1,5 @@
 
-#include "resizer.h"
+#include "../inc/resizer.h"
 
 static int     ft_atoi(const char *nptr)
 {
@@ -29,9 +29,9 @@ static int     ft_atoi(const char *nptr)
         return (nb);
 }
 
-static void	resize1(char *path, int sizex, int sizey, int format, t_data *data)
+static void	resize1(char *path, int sizex, int sizey, int format)
 {
-	int	fd = open("path", O_WRONLY | O_TRUNC);
+	int	fd = open(path, O_WRONLY | O_TRUNC);
 	int	i = 0;
 	int	j = 0;
 	int	x;
@@ -44,7 +44,7 @@ static void	resize1(char *path, int sizex, int sizey, int format, t_data *data)
 		i = 0;
 		while (i < x)
 		{
-			write(fd, "1", 1);
+			write(fd, "0", 1);
 			i++;
 		}
 		if (j < y)
@@ -53,44 +53,49 @@ static void	resize1(char *path, int sizex, int sizey, int format, t_data *data)
 			write(fd, "\0", 1);
 		j++;
 	}
+	close(fd);
 }
 
-// static void	resize2(char *path, int format, t_data *data)
-// {
-// 	int	fd = open("path", O_WRONLY | O_TRUNC);
-// 	int	x;
-// 	int	y;
-// 	int	i = 0;
-// 	int	j = 0;
+static void	resize2(char *path, int format, t_data *data)
+{
+	int	fd = open(path, O_WRONLY | O_TRUNC);
+	int	x = 0;
+	int	y = 0;
+	int	i = 0;
+	int	j = 0;
 
-// 	mlx_get_screen_size(data->mlx, &x, &y);
-// 	x /= format;
-// 	y /= format;
-// 	while (j < y)
-// 	{
-// 		i = 0;
-// 		while (i < x)
-// 		{
-// 			write(fd, "0", 1);
-// 			i++;
-// 		}
-// 		if (j < y)
-// 			write(fd, "\n", 1);
-// 		else
-// 			write(fd, "\0", 1);
-// 		j++;
-// 	}
-// }
+	data->mlx = mlx_init();
+	mlx_get_screen_size(data->mlx, &x, &y);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
+	x /= format;
+	y /= format;
+	while (j < y)
+	{
+		i = 0;
+		while (i < x)
+		{
+			write(fd, "0", 1);
+			i++;
+		}
+		if (j < y)
+			write(fd, "\n", 1);
+		else
+			write(fd, "\0", 1);
+		j++;
+	}
+	close(fd);
+}
 
 int	main(int ac, char **av)
 {
-	t_data	*data;
-
-	data = malloc(sizeof(t_data));
 	if (ac == 5)
-		resize1(av[1], ft_atoi(av[2]), ft_atoi(av[3]), ft_atoi(av[4]), data);
-	// else if (ac == 3)
-	// 	resize2(av[1], ft_atoi(av[2]), data);
+		resize1(av[1], ft_atoi(av[2]), ft_atoi(av[3]), ft_atoi(av[4]));
+	else if (ac == 3)
+	{
+		t_data	data;
+		resize2(av[1], ft_atoi(av[2]), &data);
+	}
 	else
 		printf("Error : Try [./a.out 'path/file' sizex sizey format]");
 	return (0);
