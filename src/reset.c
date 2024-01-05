@@ -20,7 +20,6 @@ char	**reset_map(char **str, char c)
 int	reset(t_data *data)
 {
 	data->map = reset_map(data->map, '0');
-	mlx_clear_window(data->mlx, data->win);
 	draw_map(data->map, data);
 	data->gen = 0;
 	return (0);
