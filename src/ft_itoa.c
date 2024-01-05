@@ -1,11 +1,5 @@
 #include "../inc/life_game.h"
 
-//==========================================================================
-// conter le normbre de digits dans n et pas oublier un 1 pour le -
-// malloc de la taille des digits
-//==========================================================================
-// inserrer les digits un par un encommencantparla fin dans la string
-
 static int	get_nb_of_digits(long int n)
 {
 	int	nb;

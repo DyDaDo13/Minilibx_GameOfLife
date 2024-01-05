@@ -1,18 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 10:37:37 by dydado13          #+#    #+#             */
-/*   Updated: 2024/01/04 07:14:07 by dylmarti         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/get_next_line.h"
-// lise la ligne buffer par buffer si \n trouver retourner la ligne et garder
-// les valeur dans une stash
 
 char	*after_newline(char *stash)
 {
