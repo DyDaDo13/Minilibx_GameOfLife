@@ -12,7 +12,7 @@ when installed type 'Make'
 
 press 'r' ro reset the map
 press 'space' to move to the next generation
-hold 'space' to move faster (little bit glitchy with the window on mine pc)
+hold 'space' to move faster
 
 for the resizer : https://github.com/DyDaDo13/Map_Resizer
 
