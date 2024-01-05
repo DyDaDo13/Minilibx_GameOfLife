@@ -155,13 +155,6 @@ int	find_block2(t_data *data)
 	return (0);
 }
 
-
-void	refresh_map(t_data *data, char **map)
-{
-	mlx_clear_window(data->mlx, data->win);
-	draw_map(map, data);
-}
-
 void	free_map2(char **map)
 {
 	int		i = -1;
@@ -193,7 +186,7 @@ int	algorithm(t_data *data)
 	free_map(data);
 	data->map = map_cpy(cpy);
 	free_map2(cpy);
-	refresh_map(data, data->map);
+	draw_map(map, data);
 	printf("Generation %i\n", data->gen++);
 	return (0);
 }
