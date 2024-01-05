@@ -22,5 +22,6 @@ int	reset(t_data *data)
 	data->map = reset_map(data->map, '0');
 	draw_map(data->map, data);
 	data->gen = 0;
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen++));
 	return (0);
 }

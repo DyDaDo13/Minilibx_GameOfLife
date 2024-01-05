@@ -187,6 +187,6 @@ int	algorithm(t_data *data)
 	data->map = map_cpy(cpy);
 	free_map2(cpy);
 	draw_map(data->map, data);
-	printf("Generation %i\n", data->gen++);
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen++));
 	return (0);
 }

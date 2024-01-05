@@ -102,5 +102,6 @@ int		ft_key_check(int key, t_data *data);
 ///////////////// OTHERS ////////////////
 void	print_map(char **map);
 char	**map_cpy(char **map);
+char	*ft_itoa(int n);
 
 #endif
