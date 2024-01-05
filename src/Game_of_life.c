@@ -15,7 +15,7 @@ void	ft_display(t_data *data)
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, (data->map_width * 16), (data->map_height * 16), "GAME OF LIFE");
 	init_images(data);
-	draw_map(data);
+	draw_map(data->map, data);
 	mlx_hook(data->win, 3, (1L << 0) + (1L << 1), ft_key_check, data);
 	mlx_hook(data->win, ButtonPress, (1L << 2), mouse_hook, data);
 	mlx_hook(data->win, 17, 0L, ft_stop, data);
@@ -25,12 +25,15 @@ void	ft_display(t_data *data)
 int	main(void)
 {
 	t_data	*data;
+	char	**cpy;
 	int		fd;
 	
 	data = malloc(sizeof(t_data));
 	fd = open("map/map.txt", O_RDONLY);
 	data->map = init_map(fd, data);
 	data->map_cpy = data->map;
-	ft_display(data);
+	cpy = map_cpy(data->map_cpy);
+	print_map(cpy);
+	//ft_display(data);
 	return (0);
 }

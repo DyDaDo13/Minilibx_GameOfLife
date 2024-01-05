@@ -49,6 +49,7 @@ typedef struct s_data
 {
 	char			**map;
 	char			**map_cpy;
+	char			**map_cpy2;
 	void			*mlx;
 	void			*win;
 	int				i;
@@ -91,15 +92,17 @@ void	destroy_all_images(t_data *data);
 int		ft_stop(t_data *data);
 
 ///////////// INIT AND DRAW /////////////
-void	draw_map(t_data *data);
+void	draw_map(char **map, t_data *data);
 char	**init_map(int fd, t_data *data);
 void	init_images(t_data *data);
-void	draw_images(t_data *data, int i, int j);
+void	draw_images(char **map, t_data *data, int i, int j);
 
 ////////////// HOOKS //////////////
 int		mouse_hook(int mc, int x, int y, t_data *data);
 int		ft_key_check(int key, t_data *data);
 
 ///////////////// OTHERS ////////////////
+void	print_map(char **map);
+char	**map_cpy(char **map);
 
 #endif

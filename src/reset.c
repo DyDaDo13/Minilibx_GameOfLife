@@ -21,6 +21,6 @@ int	reset(t_data *data)
 {
 	data->map_cpy = reset_map(data->map_cpy, '0');
 	mlx_clear_window(data->mlx, data->win);
-	draw_map(data);
+	draw_map(data->map, data);
 	return (0);
 }

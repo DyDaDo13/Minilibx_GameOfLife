@@ -10,7 +10,8 @@ get_next_line_utils.c \
 init_images.c init_map.c \
 lst_functions.c Game_of_life.c \
 draw.c get_m_x_y.c \
-algorithm.c hooks.c reset.c\
+algorithm.c hooks.c reset.c \
+print_map.c map_cpy.c \
 #───────────────────────────────╱
 
 #┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
