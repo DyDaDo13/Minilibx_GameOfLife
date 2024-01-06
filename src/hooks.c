@@ -57,6 +57,5 @@ int	ft_key_check(int key, t_data *data)
 		mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule = 6));
 		mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
 	}
-	printf("key = %irand = %i\n", key, (rand() % 2));
 	return (0);
 }
