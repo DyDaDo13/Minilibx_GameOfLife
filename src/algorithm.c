@@ -28,7 +28,7 @@ int	is_dead(t_data *data)
 	if (y + 1 <= (data->map_height - 1))
 		if (data->map[y + 1][x - 1] && data->map[y + 1][x - 1] == '1')
 			count++;
-	if (count > 3 || count < 2) // rules
+	if (count > data->rule || count < 2) // rules
 		return (1);
 	return (0);
 }
@@ -187,6 +187,8 @@ int	algorithm(t_data *data)
 	data->map = map_cpy(cpy);
 	free_map2(cpy);
 	draw_map(data->map, data);
-	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen++));
+	data->gen++;
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+	mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
 	return (0);
 }
