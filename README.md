@@ -17,6 +17,7 @@ press 'space' to move to the next generation
 
 hold 'space' to move faster
 
+to change the map presset press '1' or '2'
 
 to change the rules press '3', '4', '5', '6' or type "./Gameoflife 'rule number'"
 
