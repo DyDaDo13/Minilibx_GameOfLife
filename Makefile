@@ -162,7 +162,7 @@ message:
 	@echo "\n\n$(COLOUR_OK)    ...MAKEFILE BY DYDADO13...\n$(NO_COLOUR)"
 	@echo "Name	:	$(NAME)"
 	@echo "Author	:	dylmarti, Dylan Martinez"
-	@echo "Compil	:	cc"
+	@echo "Compil	:	$(CC)"
 	@echo "Flags	:	-Wall -Werror -Wextra\n"
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
