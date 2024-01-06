@@ -47,13 +47,13 @@ typedef struct s_point
 
 typedef struct s_data
 {
-	char			**map;
-	void			*mlx;
-	void			*win;
-	int				rule;
-	int				i;
-	int				j;
-	int				i_x;
+	char			**map;			// the map
+	void			*mlx;			// pointer mlx
+	void			*win;			// pointer window
+	int				rule;			// the rule of my game "numbers"
+	int				i;				// a index i
+	int				j;				// a index j
+	int				i_x;			
 	int				i_y;
 	int				m_x;
 	int				m_y;
