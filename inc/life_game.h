@@ -50,6 +50,7 @@ typedef struct s_data
 	char			**map;
 	void			*mlx;
 	void			*win;
+	int				rule;
 	int				i;
 	int				j;
 	int				i_x;
@@ -70,6 +71,8 @@ typedef struct s_data
 ///////// GAME ////////////
 int		algorithm(t_data *data);
 int		reset(t_data *data);
+int		damed_map(t_data *data);
+int		random_map(t_data *data);
 
 
 ///////////// LIST FUNCTIONS /////////
@@ -103,5 +106,7 @@ int		ft_key_check(int key, t_data *data);
 void	print_map(char **map);
 char	**map_cpy(char **map);
 char	*ft_itoa(int n);
+char	**damed_map2(char **str, char c, char r);
+int		ft_atoi(char *nptr);
 
 #endif

@@ -12,6 +12,7 @@ lst_functions.c Game_of_life.c \
 draw.c get_m_x_y.c \
 algorithm.c hooks.c reset.c \
 print_map.c map_cpy.c ft_itoa.c \
+presets.c ft_atoi.c \
 #───────────────────────────────╱
 
 #┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
