@@ -2,20 +2,24 @@
 
 int		mouse_hook(int mc, int x, int y, t_data *data)
 {
-	data->m_x = 0;
-	data->m_y = 0;
+	data->mouse_posx = 0;
+	data->mouse_posy = 0;
 	if (mc == 1)
 	{
 		get_m_x_y(data, x, y);
-		if (data->map[data->m_y][data->m_x] == '0')
+		if (data->map[data->mouse_posy][data->mouse_posx] == '0')
 		{
-			data->map[data->m_y][data->m_x] = '1';
-			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, data->i_x, data->i_y);
+			data->map[data->mouse_posy][data->mouse_posx] = '1';
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, data->image__posx, data->image__posy);
+			mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+			mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
 		}
-		else if (data->map[data->m_y][data->m_x] == '1')
+		else if (data->map[data->mouse_posy][data->mouse_posx] == '1')
 		{
-			data->map[data->m_y][data->m_x] = '0';
-			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, data->i_x, data->i_y);
+			data->map[data->mouse_posy][data->mouse_posx] = '0';
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, data->image__posx, data->image__posy);
+			mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+			mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
 		}
 	}
 	return (0);

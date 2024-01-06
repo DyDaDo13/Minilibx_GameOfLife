@@ -3,8 +3,8 @@
 int	is_dead(t_data *data)
 {
 	int		count = 0;
-	int		x = data->b_x;
-	int		y = data->b_y;
+	int		x = data->bloc_posx;
+	int		y = data->bloc_posy;
 
 	if (data->map[y][x - 1] && data->map[y][x - 1] == '1')
 		count++;
@@ -36,8 +36,8 @@ int	is_dead(t_data *data)
 int	is_born(t_data *data)
 {
 	int		count = 0;
-	int		x = data->b_x;
-	int		y = data->b_y;
+	int		x = data->bloc_posx;
+	int		y = data->bloc_posy;
 
 	if (data->map[y][x - 1] && data->map[y][x - 1] == '1')
 		count++;
@@ -74,8 +74,8 @@ int	find_block(t_data *data)
 		{
 			if (data->map[data->i][data->j] && data->map[data->i][data->j] == '1')
 			{
-				data->b_y = data->i;
-				data->b_x = data->j;
+				data->bloc_posy = data->i;
+				data->bloc_posx = data->j;
 				if (data->map[data->i][data->j + 1] != '\0')
 					data->j++;
 				else
@@ -136,8 +136,8 @@ int	find_block2(t_data *data)
 		{
 			if (is_block(data) == 1)
 			{
-				data->b_y = data->i;
-				data->b_x = data->j;
+				data->bloc_posy = data->i;
+				data->bloc_posx = data->j;
 				if (data->map[data->i][data->j + 1] != '\0')
 					data->j++;
 				else
@@ -174,14 +174,14 @@ int	algorithm(t_data *data)
 	while (find_block(data) == 1)
 	{
 		if (is_dead(data) == 1)
-			cpy[data->b_y][data->b_x] = '0';
+			cpy[data->bloc_posy][data->bloc_posx] = '0';
 	}
 	data->i = 0;
 	data->j = 0;
 	while (find_block2(data) == 1)
 	{
 		if (is_born(data) == 1)
-			cpy[data->b_y][data->b_x] = '1';
+			cpy[data->bloc_posy][data->bloc_posx] = '1';
 	}
 	free_map(data);
 	data->map = map_cpy(cpy);

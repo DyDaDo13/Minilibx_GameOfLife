@@ -53,17 +53,17 @@ typedef struct s_data
 	int				rule;			// the rule of my game "numbers"
 	int				i;				// a index i
 	int				j;				// a index j
-	int				i_x;			
-	int				i_y;
-	int				m_x;
-	int				m_y;
-	int				b_x;
-	int				b_y;
-	int				x;
-	int				y;
-	int				gen;
-	int				map_height;
-	int				map_width;
+	int				image__posx;	// the pos of the image on the screen
+	int				image__posy;
+	int				mouse_posx;		// the position of the mnouse
+	int				mouse_posy;
+	int				bloc_posx;		// the position of a block
+	int				bloc_posy;
+	int				x;				// index x
+	int				y;				// index y
+	int				gen;			// generation counter
+	int				map_height;		// the height of the map
+	int				map_width;		// the width of the map
 	t_map			*map_char;
 	t_sprites		sprites;
 }t_data;
@@ -73,7 +73,6 @@ int		algorithm(t_data *data);
 int		reset(t_data *data);
 int		damed_map(t_data *data);
 int		random_map(t_data *data);
-
 
 ///////////// LIST FUNCTIONS /////////
 int		ft_lstsize(t_map *lst);

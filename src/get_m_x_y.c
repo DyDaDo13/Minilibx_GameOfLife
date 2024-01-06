@@ -3,20 +3,20 @@
 void	get_m_x_y(t_data *data, int x, int y)
 {
 	int		i = 0;
-	while (data->m_x < x)
+	while (data->mouse_posx < x)
 	{
-		data->m_x += 16;
+		data->mouse_posx += 16;
 		i++;
 	}
-	data->m_x = i - 1;
+	data->mouse_posx = i - 1;
 	i = 0;
-	while (data->m_y < y)
+	while (data->mouse_posy < y)
 	{
-		data->m_y += 16;
+		data->mouse_posy += 16;
 		i++;
 	}
-	data->m_y = i - 1;
+	data->mouse_posy = i - 1;
 	i = 0;
-	data->i_x = (data->m_x * 16);
-	data->i_y = (data->m_y * 16);
+	data->image__posx = (data->mouse_posx * 16);
+	data->image__posy = (data->mouse_posy * 16);
 }
