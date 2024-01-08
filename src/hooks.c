@@ -2,6 +2,7 @@
 
 int		mouse_hook(int mc, int x, int y, t_data *data)
 {
+	char	*temp;
 	data->mouse_posx = 0;
 	data->mouse_posy = 0;
 	if (mc == 1)
@@ -11,15 +12,23 @@ int		mouse_hook(int mc, int x, int y, t_data *data)
 		{
 			data->map[data->mouse_posy][data->mouse_posx] = '1';
 			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, data->image__posx, data->image__posy);
-			mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
-			mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
+			temp = ft_itoa(data->gen);
+			mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+			free(temp);
+			temp = ft_itoa(data->rule);
+			mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+			free(temp);
 		}
 		else if (data->map[data->mouse_posy][data->mouse_posx] == '1')
 		{
 			data->map[data->mouse_posy][data->mouse_posx] = '0';
 			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, data->image__posx, data->image__posy);
-			mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
-			mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
+			temp = ft_itoa(data->gen);
+			mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+			free(temp);
+			temp = ft_itoa(data->rule);
+			mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+			free(temp);
 		}
 	}
 	return (0);
