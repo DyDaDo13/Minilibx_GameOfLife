@@ -25,12 +25,17 @@ char	**damed_map2(char **str, char c, char r)
 
 int	damed_map(t_data *data)
 {
+	char	*temp;
 	data->map = damed_map2(data->map, '1', '0');
 	draw_map(data->map, data);
 	data->gen = -1;
 	data->gen++;
-	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
-	mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
+	temp = ft_itoa(data->gen);
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+	free(temp);
+	temp = ft_itoa(data->rule);
+	mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+	free(temp);
 	return (0);
 }
 
@@ -63,11 +68,16 @@ char	**random_map2(char **str, t_data *data, char c, char r)
 
 int	random_map(t_data *data)
 {
+	char	*temp;
 	data->map = random_map2(data->map, data, '1', '0');
 	draw_map(data->map, data);
 	data->gen = -1;
 	data->gen++;
-	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
-	mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));
+	temp = ft_itoa(data->gen);
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+	free(temp);
+	temp = ft_itoa(data->rule);
+	mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+	free(temp);
 	return (0);
 }

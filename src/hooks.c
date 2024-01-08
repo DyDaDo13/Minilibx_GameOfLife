@@ -27,6 +27,7 @@ int		mouse_hook(int mc, int x, int y, t_data *data)
 
 int	ft_key_check(int key, t_data *data)
 {
+	char	*temp;
 	if (key == XK_Escape)
 		ft_stop(data);
 	if (key == XK_space)
@@ -40,26 +41,45 @@ int	ft_key_check(int key, t_data *data)
 	if (key == 51)
 	{
 		draw_map(data->map, data);
-		mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule = 3));
-		mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+		temp = ft_itoa(data->rule = 3);
+		mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+		free(temp);
+		temp = ft_itoa(data->gen);
+		mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+		free(temp);
 	}
 	if (key == 52)
 	{
 		draw_map(data->map, data);
-		mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule = 4));
-		mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+		draw_map(data->map, data);
+		temp = ft_itoa(data->rule = 4);
+		mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+		free(temp);
+		temp = ft_itoa(data->gen);
+		mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+		free(temp);
 	}
 	if (key == 53)
 	{
 		draw_map(data->map, data);
-		mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule = 5));
-		mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+		draw_map(data->map, data);
+		temp = ft_itoa(data->rule = 5);
+		mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+		free(temp);
+		temp = ft_itoa(data->gen);
+		mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+		free(temp);
 	}
 	if (key == 54)
 	{
 		draw_map(data->map, data);
-		mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule = 6));
-		mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));
+		draw_map(data->map, data);
+		temp = ft_itoa(data->rule = 6);
+		mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);
+		free(temp);
+		temp = ft_itoa(data->gen);
+		mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);
+		free(temp);
 	}
 	return (0);
 }

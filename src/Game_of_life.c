@@ -13,6 +13,7 @@ int	ft_stop(t_data *data)
 
 void	ft_display(t_data *data)
 {
+	char	*temp;
 	data->x = 0;
 	data->y = 0;
 	data->bloc_posx = 0;
@@ -22,8 +23,13 @@ void	ft_display(t_data *data)
 	data->win = mlx_new_window(data->mlx, (data->map_width * 16), (data->map_height * 16), "GAME OF LIFE"); //create a new window
 	init_images(data);							// initialize all images
 	draw_map(data->map, data);					// draw the map
-	mlx_string_put(data->mlx, data->win, 6, 12, -200, ft_itoa(data->gen));		// write the actual generation
-	mlx_string_put(data->mlx, data->win, 6, 28, 2000, ft_itoa(data->rule));		// write the actual rule
+	draw_map(data->map, data);
+	temp = ft_itoa(data->rule);
+	mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);					// write the actual rule
+	free(temp);
+	temp = ft_itoa(data->gen);
+	mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);					// write the actual gen
+	free(temp);
 	mlx_hook(data->win, 3, (1L << 0) + (1L << 1), ft_key_check, data);			// hook for the keyboard entries
 	mlx_hook(data->win, ButtonPress, (1L << 2), mouse_hook, data);				// hook for the mouse location
 	mlx_hook(data->win, 17, 0L, ft_stop, data);									// hook for the stop cross window
