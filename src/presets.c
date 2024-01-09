@@ -50,7 +50,7 @@ char	**random_map2(char **str, t_data *data, char c, char r)
 		j = 0;
 		while (str[i][j])
 		{
-			if ((rand() % 2) == 1)
+			if ((rand() % 4) == 1)
 			{
 				if (str[i][j] == c)
 					str[i][j] = r;
@@ -69,6 +69,7 @@ char	**random_map2(char **str, t_data *data, char c, char r)
 int	random_map(t_data *data)
 {
 	char	*temp;
+	reset(data);
 	data->map = random_map2(data->map, data, '1', '0');
 	draw_map(data->map, data);
 	data->gen = -1;

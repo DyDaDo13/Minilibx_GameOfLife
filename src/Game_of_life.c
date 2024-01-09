@@ -23,7 +23,6 @@ void	ft_display(t_data *data)
 	data->win = mlx_new_window(data->mlx, (data->map_width * 16), (data->map_height * 16), "GAME OF LIFE"); //create a new window
 	init_images(data);							// initialize all images
 	draw_map(data->map, data);					// draw the map
-	draw_map(data->map, data);
 	temp = ft_itoa(data->rule);
 	mlx_string_put(data->mlx, data->win, 6, 28, 2000, temp);					// write the actual rule
 	free(temp);
