@@ -57,6 +57,7 @@ typedef struct s_data
 	int				j;				// a index j
 	int				i_pix;
 	int				j_pix;
+	int				state;
 	int				image__posx;	// the pos of the image on the screen
 	int				image__posy;
 	int				mouse_posx;		// the position of the mnouse

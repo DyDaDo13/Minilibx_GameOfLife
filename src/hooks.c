@@ -40,9 +40,14 @@ int	ft_key_check(int key, t_data *data)
 	if (key == XK_Escape)
 		ft_stop(data);
 	if (key == XK_space)
+	{
 		algorithm(data);
+		data->state = 0;
+	}
 	if (key == XK_r)
 		reset(data);
+	if (key == XK_a)
+		data->state = !data->state;
 	if (key == 49)
 		damed_map(data);
 	if (key == 50)
