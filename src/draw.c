@@ -30,3 +30,15 @@ void	draw_map(char **map, t_data *data)
 		i++;
 	}
 }
+
+void	refresh_counter(t_data *data)
+{
+	int		i = -1;
+	while(++i < 10)
+	{
+		if (data->map[0][i] == '0')
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, (i * 16), 0);
+		else if (data->map[0][i] == '1')
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, (i * 16), 0);
+	}
+}

@@ -78,6 +78,8 @@ int	find_block(t_data *data)
 			{
 				data->bloc_posy = data->i;
 				data->bloc_posx = data->j;
+				data->i_pix = data->i * 16;
+				data->j_pix = data->j * 16;
 				if (data->map[data->i][data->j + 1] != '\0')
 					data->j++;
 				else
@@ -140,6 +142,8 @@ int	find_block2(t_data *data)
 			{
 				data->bloc_posy = data->i;
 				data->bloc_posx = data->j;
+				data->i_pix = data->i * 16;
+				data->j_pix = data->j * 16;
 				if (data->map[data->i][data->j + 1] != '\0')
 					data->j++;
 				else
@@ -172,24 +176,35 @@ int	algorithm(t_data *data)
 	char		**cpy;
 	data->i = 0;
 	data->j = 0;
+	data->i_pix = 0;
+	data->j_pix = 0;
 
 	cpy = map_cpy(data->map);
 	while (find_block(data) == 1)
 	{
 		if (is_dead(data) == 1)
+		{
 			cpy[data->bloc_posy][data->bloc_posx] = '0';
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.empty.image, data->j_pix, data->i_pix);
+		}
 	}
 	data->i = 0;
 	data->j = 0;
+	data->i_pix = 0;
+	data->j_pix = 0;
 	while (find_block2(data) == 1)
 	{
 		if (is_born(data) == 1)
+		{
 			cpy[data->bloc_posy][data->bloc_posx] = '1';
+			mlx_put_image_to_window(data->mlx, data->win, data->sprites.full.image, data->j_pix, data->i_pix);
+		}
 	}
 	free_map(data);
 	data->map = map_cpy(cpy);
 	free_map2(cpy);
-	draw_map(data->map, data);
+	refresh_counter(data);
+	//draw_map(data->map, data);
 	data->gen++;
 	temp = ft_itoa(data->gen);
 	mlx_string_put(data->mlx, data->win, 6, 12, -200, temp);

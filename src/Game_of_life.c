@@ -31,7 +31,7 @@ void	ft_display(t_data *data)
 	free(temp);
 	mlx_hook(data->win, 3, (1L << 0) + (1L << 1), ft_key_check, data);			// hook for the keyboard entries
 	mlx_hook(data->win, ButtonPress, (1L << 2), mouse_hook, data);				// hook for the mouse location
-	mlx_hook(data->win, 17, 0L, ft_stop, data);									// hook for the stop cross window
+	mlx_hook(data->win, 17, 0L, ft_stop, data);
 	mlx_loop(data->mlx);														// loop
 }
 
