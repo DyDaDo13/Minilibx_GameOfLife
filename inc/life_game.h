@@ -121,6 +121,6 @@ char	*ft_itoa(int n);
 char	**damed_map2(char **str, char c, char r);
 int		ft_atoi(char *nptr);
 int		change_state(int key, t_data *data);
-
+int 	save_map(t_data *data);
 
 #endif

@@ -71,7 +71,7 @@ char	*read_and_save(int fd, char *stash)
 			return (free(buffer), NULL);
 		}
 		buffer[i] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		stash = ft_strjoin(stash, buffer, 1);
 	}
 	free (buffer);
 	return (stash);

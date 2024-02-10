@@ -18,7 +18,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2, int nb)
 {
 	char		*str;
 	size_t		i;
@@ -42,7 +42,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[r] != '\0')
 		str[i++] = s2[r++];
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
-	free(s1);
+	if (nb == 1)
+		free(s1);
 	return (str);
 }
 

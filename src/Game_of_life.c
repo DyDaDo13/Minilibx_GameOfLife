@@ -30,6 +30,7 @@ void	ft_display(t_data *data)
 	data->bloc_posy = 0;
 	data->gen = 0;
 	data->state = 0;
+	data->rule = 3;
 	data->mlx = mlx_init();						// initialize the pointer mlx
 	data->win = mlx_new_window(data->mlx, (data->map_width * 16), (data->map_height * 16), "GAME OF LIFE"); //create a new window
 	init_images(data);							// initialize all images
@@ -54,10 +55,11 @@ int	main(int ac, char **av)
 	
 	data = malloc(sizeof(t_data));				// malloc the data
 	if (ac == 2)								// if the number of arguments are equals to 2
-		data->rule = ft_atoi(av[1]);			// data->rule equals the secont argument "number"
+		fd = open(av[1], O_RDONLY);			// data->rule equals the secont argument "number"
+	else if (ac == 1)
+		fd = open("map/map.txt", O_RDONLY);			// open the fd with "0_RDONLY" flag
 	else
 		data->rule = 3;
-	fd = open("map/map.txt", O_RDONLY);			// open the fd with "0_RDONLY" flag
 	data->map = init_map(fd, data);				// put all the map (fd) inside a "char **"
 	ft_display(data);							// start the display of the game
 	return (0);
